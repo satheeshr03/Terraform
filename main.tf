@@ -33,3 +33,17 @@ resource "aws_instance" "satheesh_Jenkins" {
     CreatedBy = "Terraform"
   }
 }
+
+resource "aws_instance" "satheesh_Sonarqube" {
+  ami = var.ami
+  instance_type = var.instance_type
+  key_name = var.key_name
+  subnet_id = var.subnet_id
+  vpc_security_group_ids = var.security_group_ids
+  iam_instance_profile = var.iam_instance_profile
+  user_data = file("sonarqube.sh")
+  tags = {
+    Name = "sathiSonarqube"
+    CreatedBy = "Terraforms"
+  }
+}
