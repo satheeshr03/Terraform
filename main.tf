@@ -1,49 +1,49 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "5.61.0"
     }
   }
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region  = "us-east-1"
   profile = "default"
 }
 
 terraform {
   backend "s3" {
     bucket = "satheesh03011"
-    key = "projects_statefile/terraform.state"
+    key    = "projects_statefile/terraform.state"
     region = "us-east-1"
   }
 }
 
 resource "aws_instance" "satheesh_Jenkins" {
-  ami = var.ami
-  instance_type = var.instance_type
-  key_name = var.key_name
-  subnet_id = var.subnet_id
+  ami                    = var.ami
+  instance_type          = var.instance_type
+  key_name               = var.key_name
+  subnet_id              = var.subnet_id
   vpc_security_group_ids = var.security_group_ids
-  iam_instance_profile = var.iam_instance_profile
-  user_data = file("jenkins.sh")
+  iam_instance_profile   = var.iam_instance_profile
+  user_data              = file("jenkins.sh")
   tags = {
-    Name = "sathi_jenkins"
+    Name      = "sathi_jenkins"
     CreatedBy = "Terraform"
   }
 }
 
 resource "aws_instance" "satheesh_Sonarqube" {
-  ami = var.ami
-  instance_type = var.instance_type
-  key_name = var.key_name
-  subnet_id = var.subnet_id
+  ami                    = var.ami
+  instance_type          = var.instance_type
+  key_name               = var.key_name
+  subnet_id              = var.subnet_id
   vpc_security_group_ids = var.security_group_ids
-  iam_instance_profile = var.iam_instance_profile
-  user_data = file("sonarqube.sh")
+  iam_instance_profile   = var.iam_instance_profile
+  user_data              = file("sonarqube.sh")
   tags = {
-    Name = "sathiSonarqube"
+    Name      = "sathiSonarqube"
     CreatedBy = "Terraforms"
   }
 }

@@ -11,8 +11,8 @@ variable "subnet_id" {
   default = "subnet-0b6676147b46014b1"
 }
 variable "security_group_ids" {
-  type = list(string)
-  default = [ "sg-06504889e3cde5eb5" ]
+  type    = list(string)
+  default = ["sg-06504889e3cde5eb5"]
 }
 variable "iam_instance_profile" {
   default = "SSM"
