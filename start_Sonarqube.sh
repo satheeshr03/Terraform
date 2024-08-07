@@ -2,12 +2,11 @@
  
 # Name of the docker Container
 CONTAINER_NAME="sonarqube"
-t="true"
 
 #Check docker container is running
 RUNNING=$(docker inspect --format="{{ .State.Running }}" $CONTAINER_NAME 2>/dev/null)
-echo " RUNNING value is: $RUNNING"
-echo " RUNNING value is: $t" 
+#echo " RUNNING value is: $RUNNING"
+ 
 #If the container is not running, start it
 if [ "$RUNNING" != "true" ]; then
   echo " Contrainer $CONTAINER_NAME is not running. Starting container... "
