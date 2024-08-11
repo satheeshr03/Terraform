@@ -22,11 +22,11 @@ echo '<role rolename="admin-gui"/>'     >> /opt/tomcat/conf/tomcat-users.xml
 echo '<role rolename="admin-script"/>' >> /opt/tomcat/conf/tomcat-users.xml
 echo '<user username="admin" password="redhat@123" roles="manager-gui,manager-script,manager-jmx,manager-status,admin-gui,admin-script"/>' >> /opt/tomcat/conf/tomcat-users.xml
 echo "</tomcat-users>" >> /opt/tomcat/conf/tomcat-users.xml
-
+sudo cp -pvr /opt/tomcat/webapps/manager/META-INF/context.xml "/opt/tomcat/webapps/manager/META-INF/context.xml_$(date +%F_%R)"
 sed -i '2,$d' /opt/tomcat/webapps/manager/META-INF/context.xml
 echo '<Context antiResourceLocking="false" privileged="true" >' >> /opt/tomcat/webapps/manager/META-INF/context.xml
 echo '</Context>' >> /opt/tomcat/webapps/manager/META-INF/context.xml
-
+sudo cp -pvr /opt/tomcat/webapps/host-manager/META-INF/context.xml "/opt/tomcat/webapps/host-manager/META-INF/context.xml_$(date +%F_%R)"
 sed -i '2,$d' /opt/tomcat/webapps/host-manager/META-INF/context.xml
 echo '<Context antiResourceLocking="false" privileged="true" >' >> /opt/tomcat/webapps/host-manager/META-INF/context.xml
 echo '</Context>' >> /opt/tomcat/webapps/host-manager/META-INF/context.xml
