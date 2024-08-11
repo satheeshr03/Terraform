@@ -7,9 +7,10 @@ sudo apt-get install openjdk-11-jdk -y
 sudo cp -pvr /etc/environment "/etc/environment_$(date +%F_%R)"
 echo "JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/" >> /etc/environment
 cd /opt/
-sudo wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.96/bin/apache-tomcat-8.5.96.tar.gz
-sudo tar xvzf apache-tomcat-8.5.96.tar.gz
-sudo mv apache-tomcat-8.5.96 tomcat
+# sudo wget https://downloads.apache.org/tomcat/tomcat-8/v8.5.96/bin/apache-tomcat-8.5.96.tar.gz
+sudo wget https://downloads.apache.org/tomcat/tomcat-11/v11.0.0-M24/bin/apache-tomcat-11.0.0-M24.tar.gz
+sudo tar xvzf apache-tomcat-11.0.0-M24.tar.gz
+sudo mv apache-tomcat-11.0.0-M24 tomcat
 cd /opt/tomcat/
 sudo cp -pvr /opt/tomcat/conf/tomcat-users.xml "/opt/tomcat/conf/tomcat-users.xml_$(date +%F_%R)"
 sed -i '$d' /opt/tomcat/conf/tomcat-users.xml
