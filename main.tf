@@ -51,7 +51,7 @@ resource "aws_instance" "satheesh_Sonarqube" {
     Name      = "sathiSonarqube"
     CreatedBy = "Terraforms"
   }
-} */
+} 
 
 # Continuous Binary Code Repository - JFROG
 resource "aws_instance" "sathi_jfrog" {
@@ -66,9 +66,9 @@ resource "aws_instance" "sathi_jfrog" {
     Name      = "sathi_jfrog"
     CreatedBy = "Terraform"
   }
-}
+} */
 
-/* # Application Server - Apache Tomcat 
+# Application Server - Apache Tomcat 
 resource "aws_instance" "sathi_tomcat" {
   ami = var.ami
   instance_type = var.instance_type
@@ -81,4 +81,4 @@ resource "aws_instance" "sathi_tomcat" {
     Name="sathi_tomacat1"
     CreatedBy="terraform"
   }
-} */
+}
