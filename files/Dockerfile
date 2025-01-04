@@ -63,7 +63,7 @@ RUN echo '</Context>' >> /opt/tomcat/webapps/host-manager/META-INF/context.xml
 
 #COPY ./devops.war /opt/tomcat/webapps/
 WORKDIR /opt/tomcat/webapps
-RUN curl -O -L https://gitlab.com/kesav.kummari/ansible-role-tomcat/-/raw/main/tomcat/files/devops.war
+RUN curl -O -L https://github.com/satheeshr03/Terraform/tree/main/files/devops.war
 
 RUN echo '[Unit]' > /etc/systemd/system/tomcat.service 
 RUN echo 'Description=Apache Tomcat Web Application Container' >> /etc/systemd/system/tomcat.service 

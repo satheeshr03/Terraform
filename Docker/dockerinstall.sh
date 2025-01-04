@@ -27,4 +27,5 @@ sudo systemctl enable docker
 # Restart Docker Daemon 
 sudo systemctl restart docker
 cd /opt/
-sudo wget 
+sudo wget https://github.com/satheeshr03/Terraform/tree/main/files/Dockerfile
+sudo docker build .
